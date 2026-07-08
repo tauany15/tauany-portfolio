@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUp, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 
+const sections = ["home", "projects", "about", "skills", "contact"];
+
 // Navigation Component
 function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
-  const sections = ["home", "projects", "about", "skills", "contact"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,12 +39,12 @@ function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
-      <ul className="flex justify-center space-x-8 py-4 px-4">
+      <ul className="flex justify-start sm:justify-center gap-4 sm:gap-8 py-4 px-4 overflow-x-auto whitespace-nowrap">
         {sections.map((section) => (
           <li key={section}>
             <button
               onClick={() => scrollToSection(section)}
-              className={`capitalize font-medium transition-all duration-300 ${
+              className={`capitalize text-sm sm:text-base font-medium transition-all duration-300 ${
                 activeSection === section
                   ? "text-purple-600 border-b-2 border-purple-600"
                   : "text-gray-600 hover:text-purple-500"
@@ -71,12 +72,12 @@ function Hero() {
         </h1>
 
         <h2 className="text-xl md:text-2xl text-gray-700 font-semibold mb-6">
-          Full Stack Developer | Software QA | Support Specialist
+          Software Developer
         </h2>
 
         <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-          I love building clean, responsive web applications and helping solve
-          problems with code and creativity.
+          I build accessible, user-focused web applications with React and JavaScript.
+          Background in Support & QA. Strong debugging and problem-solving skills.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -90,14 +91,6 @@ function Hero() {
           >
             View My Projects
           </button>
-          {/* <a
-            href="public/TauanySSantos_D_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 bg-white text-purple-600 font-medium rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all border-2 border-purple-600"
-          >
-            Download Resume
-          </a> */}
         </div>
       </div>
     </section>
@@ -110,29 +103,20 @@ function Projects() {
     {
       name: "EcoWatch",
       description:
-        "A full-stack web app showcasing endangered species in cold biomes with real data from environmental APIs.",
-      role: "Developed with React, Express, and Tailwind CSS to fetch and display live species data with a clean, responsive interface.",
-      tech: ["React", "Express", "Vite", "Tailwind CSS", "REST APIs"],
+        "A data-driven web application that highlights endangered species in cold biomes using real environmental APIs.",
+      role: "I designed and built the frontend with React to fetch, process, and present live data in a clean, responsive UI, focusing on usability and performance.",
+      tech: ["React", "JavaScript", "Express", "Vite", "Tailwind CSS", "REST APIs"],
       github: "https://github.com/tauany15/ecowatch",
-      // demo: "https://tauany15.github.io/ecowatch",
+      demo: "https://tauany15.github.io/ecowatch",
     },
     {
       name: "Memory Game",
       description:
-        "An interactive matching game designed to test memory and focus, featuring dynamic card shuffling and win tracking.",
-      role: "Built with React, Vite, and Tailwind CSS to manage game state, animations, and responsive grid layouts.",
-      tech: ["React", "Vite", "JavaScript", "Tailwind CSS"],
+        "An interactive browser game focused on state management, user interaction, and responsive layout design.",
+      role: "Built with React and JavaScript, featuring dynamic card shuffling, win tracking, and smooth UI updates across screen sizes.",
+      tech: ["React", "JavaScript", "Vite", "Tailwind CSS"],
       github: "https://github.com/tauany15/memory-game",
-      // demo: "https://tauany15.github.io/memory-game",
-    },
-    {
-      name: "To-Do List App",
-      description:
-        "A full-stack task manager that lets users add, edit, and track progress with real-time updates and a clean, responsive interface.",
-      role: "Built with Node.js, Express, and MongoDB using the MVC pattern for scalable structure and smooth task management.",
-      tech: ["Node.js", "Express", "MongoDB", "EJS", "CSS3"],
-      github: "https://github.com/tauany15/To-Do-List-App",
-      // demo: "#",
+      demo: "https://tauany15.github.io/memory-game",
     },
   ];
 
@@ -143,10 +127,10 @@ function Projects() {
           Projects
         </h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects showcasing my skills.
+          Here are two selected projects that demonstrate my experience building modern, user-focused web applications.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
             <div
               key={idx}
@@ -173,7 +157,7 @@ function Projects() {
                 ))}
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 <a
                   href={project.github}
                   target="_blank"
@@ -183,17 +167,15 @@ function Projects() {
                   <ExternalLink size={16} />
                   Code
                 </a>
-                {/* {project.demo !== "#" && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-white bg-pink-500 px-4 py-2 rounded-full hover:bg-pink-600 transition-all text-sm font-medium"
-                  >
-                    <ExternalLink size={16} />
-                    Demo
-                  </a>
-                )} */}
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-purple-700 bg-purple-100 px-4 py-2 rounded-full hover:bg-purple-200 transition-all text-sm font-medium"
+                >
+                  <ExternalLink size={16} />
+                  Live Demo
+                </a>
               </div>
             </div>
           ))}
@@ -216,27 +198,22 @@ function About() {
             About Me
           </h2>
           <p className="text-gray-700 mb-4 leading-relaxed">
-            I'm Tauany Silva Santos, a detail-oriented Software Professional
-            with experience across Web Development, Software QA, and Technical
-            Support. I enjoy building efficient, user-friendly solutions and
-            improving software reliability through strong problem-solving and
-            analytical skills.{" "}
+            I’m Tauany Silva Santos, a Software Developer with a strong focus on building clean, accessible, and user-friendly web applications. I work primarily with React and JavaScript, and I enjoy turning complex problems into simple, reliable solutions.
           </p>
           <p className="text-gray-700 mb-6 leading-relaxed">
-            I hold a{" "}
+            My background in Software QA and Technical Support has shaped how I build software, with attention to detail, usability, and real user needs. I hold a{" "}
             <span className="font-semibold text-purple-700">
               Bachelor's in Information Systems
             </span>{" "}
-            from the Federal University of Minas Gerais, and have completed the{" "}
+            from the Federal University of Minas Gerais, completed the{" "}
             <span className="font-semibold text-purple-700">
               Front-End Developer course at McMaster University
             </span>{" "}
-            along with{" "}
+            and expanded my skills through{" "}
             <span className="font-semibold text-purple-700">
-              The Complete 2023 Web Development Bootcamp on Udemy,
+              The Complete 2023 Web Development Bootcamp on Udemy
             </span>
-            expanding my expertise in modern software practices and continuous
-            learning.
+            .
           </p>
           <button
             onClick={() =>
@@ -253,11 +230,11 @@ function About() {
         <div className="flex justify-center">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl blur-xl opacity-30"></div>
-            {/* <img
-              src="/profile-photo.png"
+            <img
+              src={`${process.env.PUBLIC_URL}/photo.jpeg`}
               alt="Tauany Silva Santos"
               className="relative rounded-2xl shadow-2xl w-64 md:w-80 object-cover"
-            /> */}
+            />
           </div>
         </div>
       </div>
@@ -328,14 +305,14 @@ function Contact() {
           connect! I'd love to hear from you!
         </p>
 
-        {/* <a
-          href="/TauanySSantos_D_Resume.pdf"
+        <a
+          href={`${process.env.PUBLIC_URL}/Tauany_Resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-8 py-3 bg-purple-600 text-white font-medium rounded-full shadow-lg hover:bg-purple-700 hover:scale-105 transition-all mb-12"
         >
           Download Resume
-        </a> */}
+        </a>
 
         <div className="flex justify-center gap-8 flex-wrap">
           <a
