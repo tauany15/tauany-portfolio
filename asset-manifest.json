@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tauany-portfolio/static/css/main.4880565f.css",
-    "main.js": "/tauany-portfolio/static/js/main.9ee25dbf.js",
+    "main.js": "/tauany-portfolio/static/js/main.a1dea68a.js",
     "index.html": "/tauany-portfolio/index.html",
     "main.4880565f.css.map": "/tauany-portfolio/static/css/main.4880565f.css.map",
-    "main.9ee25dbf.js.map": "/tauany-portfolio/static/js/main.9ee25dbf.js.map"
+    "main.a1dea68a.js.map": "/tauany-portfolio/static/js/main.a1dea68a.js.map"
   },
   "entrypoints": [
     "static/css/main.4880565f.css",
-    "static/js/main.9ee25dbf.js"
+    "static/js/main.a1dea68a.js"
   ]
 }
