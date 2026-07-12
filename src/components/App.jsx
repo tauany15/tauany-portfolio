@@ -107,7 +107,7 @@ function Projects() {
       role: "I designed and built the frontend with React to fetch, process, and present live data in a clean, responsive UI, focusing on usability and performance.",
       tech: ["React", "JavaScript", "Express", "Vite", "Tailwind CSS", "REST APIs"],
       github: "https://github.com/tauany15/ecowatch",
-      demo: "https://tauany15.github.io/ecowatch",
+      demo: "https://eco-watch-eight.vercel.app/",
     },
     {
       name: "Memory Game",
