@@ -105,7 +105,15 @@ function Projects() {
       description:
         "A data-driven web application that highlights endangered species in cold biomes using real environmental APIs.",
       role: "I designed and built the frontend with React to fetch, process, and present live data in a clean, responsive UI, focusing on usability and performance.",
-      tech: ["React", "JavaScript", "Express", "Vite", "Tailwind CSS", "REST APIs"],
+      tech: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Express",
+        "REST API",
+        "GBIF API",
+      ],
       github: "https://github.com/tauany15/ecowatch",
       demo: "https://eco-watch-eight.vercel.app/",
     },
